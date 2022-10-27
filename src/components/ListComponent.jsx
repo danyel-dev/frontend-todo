@@ -1,13 +1,13 @@
-import ItemComponent from "./ItemComponent";
+import ItemComponent from './ItemComponent'
 
 
-export default function ListComponent() {
+export default function ListComponent({ list }) {
     return (
         <div>
-            <p>Lista 01</p>
+            <h2>{list.name}</h2>
 
             <ul>
-                <ItemComponent></ItemComponent>
+                {list.item_set.map(item => <ItemComponent key={item.id} item={item}></ItemComponent> )}
             </ul>
         </div>
     );

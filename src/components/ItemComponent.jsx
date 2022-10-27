@@ -1,5 +1,5 @@
-export default function ItemComponent() {
+export default function ItemComponent({ item }) {
     return (
-        <li>Item 01</li>
+        <li>{item.name}</li>
     );
 }
