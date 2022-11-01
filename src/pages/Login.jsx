@@ -28,6 +28,11 @@ export default function Login() {
         event.preventDefault();
     }
 
+    function handleLogout() {
+        localStorage.removeItem('token')
+        setToken('')
+    }
+
     if (!token)
         return (
             <form onSubmit={handleFormSubmit}>
@@ -36,5 +41,11 @@ export default function Login() {
                 <button type="submit">Logar</button>
             </form>
         );
-    else return <Home />
+    else 
+        return (
+            <>
+                <Home />
+                <button onClick={handleLogout}>Logout</button>
+            </>
+        );
 }
