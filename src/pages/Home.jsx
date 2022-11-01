@@ -11,7 +11,7 @@ export default function Home() {
             const config = {
                 headers: {
                     "Content-Type": "Application/Json",
-                    "Authorization": "Token 38165839dda0ba65068fd89c2d379c7f7a86c262"
+                    "Authorization": "Token " + localStorage.getItem('token')
                 }
             }
 
