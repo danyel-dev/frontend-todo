@@ -1,9 +1,9 @@
-import UserLists from "./UserLists";
+import LoginComponent from "./LoginComponent";
 
 function App() {
   return (
     <div className="App">
-      <UserLists />
+      <LoginComponent />
     </div>
   );
 }
