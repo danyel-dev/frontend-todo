@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import ListComponent from "./ListComponent";
 import axios from 'axios';
-import LoginComponent from "./LoginComponent";
+
 
 export default function UserLists() {
     const [lists, setLists] = useState([]);
@@ -19,15 +19,9 @@ export default function UserLists() {
         axios.get(url, config).then(response => setLists(response.data)) 
     }, [])
 
-    var token = localStorage.getItem('token')
-
-    if(!token) {
-        return <LoginComponent />
-    } else {    
-        return(
-            <div>
-                { lists.map(list => <ListComponent key={list.id} listName={list.name} items={list.item_set} />) }
-            </div>
-        );
-    }
+    return(
+        <div>
+            { lists.map(list => <ListComponent key={list.id} listName={list.name} items={list.item_set} />) }
+        </div>
+    );
 }
