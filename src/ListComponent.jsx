@@ -5,7 +5,7 @@ export default function ListComponent(props) {
         <div>
             <h1>{props.listName}</h1>
             <ul>
-                <ItemComponent name={"Item 1"} />
+                {props.items.map(item => <ItemComponent key={item.id} name={item.name} />)}
             </ul>
         </div>
     );

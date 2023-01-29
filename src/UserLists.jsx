@@ -15,12 +15,12 @@ export default function UserLists() {
         }
 
         const url = "http://127.0.0.1:8000/lists/"
-        axios.get(url).then(response => setLists(response.data)) 
+        axios.get(url, config).then(response => setLists(response.data)) 
     }, [])
 
     return(
         <div>
-            { lists.map(list => <ListComponent listName={list.name} />) }
+            { lists.map(list => <ListComponent key={list.id} listName={list.name} items={list.item_set} />) }
         </div>
     );
 }
